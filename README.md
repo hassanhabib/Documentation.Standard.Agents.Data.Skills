@@ -2,7 +2,7 @@
 
 A standard for **writing**, **consuming**, and **managing** skills for agents.
 
-**Version 0.2.1**, under active authorship and not yet ratified. See [CHANGELOG.md](./CHANGELOG.md).
+**Version 0.3.0**, under active authorship and not yet ratified. See [CHANGELOG.md](./CHANGELOG.md).
 
 This repository is a *specification*, not a framework. It describes how a skill
 should be authored, how an agent should read and act on it, and how skills should
@@ -72,4 +72,4 @@ and governed among the many.
   - [2.2 Registry: the Compatibility Contract](./2-managing-skills/README.md#22-registry-exposure-the-catalog-and-the-compatibility-contract)
 
 Status: Chapters 1 (Consuming) and 2 (Managing) are complete. In Chapter 0 (Writing),
-0.0 Structure is drilled; 0.1 Rules and 0.2 Language are still to be written.
+0.0 Structure and 0.1 Rules are drilled; 0.2 Language is still to be written.

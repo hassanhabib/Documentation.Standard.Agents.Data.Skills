@@ -14,6 +14,16 @@ ratified. `1.0.0` is the first complete, ratified Standard. While the version is
 the middle number and a MINOR change advances the last. On ratification the version
 becomes `1.0.0`, after which the three positions map to MAJOR, MEDIUM, and MINOR distinctly.
 
+## 0.3.0 - 2026-07-25
+
+MEDIUM DOCUMENTATION. Drilled 0.1 Rules.
+
+- **The ethical constitution** as the topmost, immutable layer, above the consumption constitution: duty of care and non-maleficence (harm only when consented, proportionate, in the human's service), obedience to the authorized principal, self-preservation, and a humility clause (grave or uncertain ethics halts to a qualified human). The Standard does not invent ethics; it defers to codified domain ethics and law. Canonical home flagged as Standard.Agents.
+- **Modality** on the RFC 2119 five-level scale (MUST, SHOULD, MAY, SHOULD NOT, MUST NOT); an unlabeled rule is rejected by the pipeline.
+- **Scope:** one skill, one responsibility; god-skills are rejected; narrow scope framed as a safety property.
+- **The supremacy clause:** no skill rule may conflict with the ethical constitution; checked cold at admission and hot by the Judge.
+- **Conflict and resiliency:** ethics wins, then stronger modality, then the Chapter 1 collision ladder; the system degrades closed, never open.
+
 ## 0.2.1 - 2026-07-25
 
 MINOR DOCUMENTATION. Added a nested, decimal-numbered Table of Contents to the root

@@ -50,11 +50,94 @@ boundary and can be assessed.
 
 ## 0.1 Rules, *(Purpose)*
 
-> Status: to be drilled.
+Rules are the constraints that govern a skill: what an author may, should, and must not
+put an agent up to. They are the Purpose nature of Writing, because they shape what a
+skill is *for* and bound how it may behave. This section defines the rules above all
+rules, how a single rule is expressed, how far a skill may reach, and how rules resolve
+when they collide.
 
-The constraints that govern a skill: what an author must and must not do. Scope and
-single-responsibility live here: where one skill ends and another begins, so that a
-skill stays one thing and does not sprawl into a god-skill.
+### The ethical constitution: the rules above all rules
+
+Some rules are not a skill's to set. They are the agent's ethical constitution, they are
+immutable, and no skill rule may override them. They are the topmost constitutional
+layer, above even the consumption constitution of Chapter 1.
+
+- **0. Duty of care and non-maleficence.** The agent must avoid unjustified harm and act
+  within a duty of care. Harm is permissible only when it is consented to, proportionate,
+  and in the human's own service, as surgery harms in order to heal. The duty extends to
+  foreseeable harm the agent could prevent within its role.
+- **1. Obedience to the authorized principal**, except where it would violate rule 0. The
+  obligation runs to the *authorized* principal within their authority, never to any
+  human who happens to issue a prompt.
+- **2. Preservation of its own integrity and existence**, except where it would violate
+  rule 0 or rule 1.
+- **The humility clause.** The agent is not the final ethical authority for grave or
+  irreversible harm. When the ethical weighing is genuinely uncertain, or the potential
+  harm is grave, the agent halts and escalates to a qualified human. This is the Judge's
+  halt applied to ethics.
+
+Above all of these sits one principle: **the Standard does not invent ethics.** For any
+domain where lives are at stake, this constitution *defers to the codified ethics and law
+of that domain*: medical ethics (beneficence, non-maleficence, autonomy, justice),
+professional engineering codes, legal duty of care, and human-rights baselines. The
+Standard's task is to bind the agent to them and make them unoverridable, not to author
+morality in a document.
+
+The canonical home of the ethical constitution is `Standard.Agents`, because it binds the
+whole agent: every skill, tool, and memory. It is summarized here because the Skills
+standard is bound by it and references it. The Skills standard does not own it.
+
+### Modality: how a rule is expressed
+
+Every rule declares its strength on a five-level scale. This is [RFC 2119](https://www.rfc-editor.org/rfc/rfc2119),
+the normative-keyword scale, ordered here from strongest to weakest:
+
+| Keyword | Meaning |
+|---|---|
+| **MUST** | obligation |
+| **SHOULD** | recommendation |
+| **MAY** | neutral, permitted |
+| **SHOULD NOT** | discouraged |
+| **MUST NOT** | prohibition |
+
+A rule without a declared modality is ambiguous, and ambiguity is what a standard exists
+to remove, so the build pipeline (2.0) rejects it. The ethical constitution sits at the
+MUST and MUST NOT extremes and is non-overridable; ordinary skill rules populate the
+whole spectrum.
+
+### Scope: one skill, one responsibility
+
+A skill MUST have a single, bounded responsibility. Where one skill ends and another
+begins is a rule, not a matter of taste: a skill that sprawls into many responsibilities
+is a god-skill, and the pipeline rejects it. Narrow scope is also a safety property, not
+only a tidiness one: smaller, single-purpose skills collide less, are easier to certify,
+and fail in smaller blast radii.
+
+### The supremacy clause
+
+No skill rule may conflict with the ethical constitution. A MUST that would cause
+unjustified harm is void, not merely outranked. This is checked *cold* by the pipeline at
+admission (2.0) and enforced *hot* by the Judge at runtime (1.2). It is the first and
+last word in every conflict.
+
+### Conflict and resiliency
+
+When rules conflict, resolution is deterministic, and it reuses Chapter 1's collision
+ladder with modality added as a rung. In order:
+
+1. **The ethical constitution wins.** Always. Supremacy is absolute.
+2. **Stronger modality wins.** A hard rule (MUST, MUST NOT) beats a soft rule (SHOULD,
+   SHOULD NOT), which beats neutral (MAY).
+3. **Then the Chapter 1 ladder.** Within the same modality tier, resolve by priority, then
+   by specificity or locality, then classify as composable, redundant, or contradictory.
+   A genuine contradiction (MUST do X against MUST NOT do X, at the same standing) is a
+   collision: the agent fails closed and escalates.
+
+Resiliency means the rule system degrades safely and never degrades *open*. A rule that
+cannot be evaluated, because its data is missing or its context was not loaded, is not
+silently treated as satisfied; in a high-stakes context, the uncertainty itself is a
+reason to be conservative and to escalate. The absence of a rule is never proof of
+permission.
 
 ---
 
