@@ -79,6 +79,11 @@ testable: the matrix is finite, the input space is not. The pipeline proves "pas
 checks," never "safe." That is exactly why the hot line of defense must remain, and why
 high-stakes skills earn bounded deployment rather than a victory lap.
 
+For example, a submitted skill whose entire Action reads "clean up old data when needed"
+fails at stage 1 and stage 2: it declares no modality, names no target, and defines no
+Outcome, so it is neither valid structure nor testable language. The pipeline rejects it
+with those reasons, and it never reaches the pool.
+
 ---
 
 ## 2.1 Governance, *(Purpose)*: the life of the pool
@@ -147,6 +152,14 @@ Two rules make this Amanah-grade:
 
 Certification drifts: a model update invalidates certification for that model until the
 pipeline re-runs. Pin exact model versions.
+
+For example, take a skill certified compatible on model-A version 1 at fidelity 0.94:
+
+- On model-A version 1, a routine action: pass.
+- On model-A version 2, the same action: warning, because the version changed; at high
+  stakes, error until re-certified.
+- On model-B, never tested: error and fail closed; at high stakes, critical fail.
+- On any model where it was certified incompatible: critical fail, whatever the stakes.
 
 ---
 

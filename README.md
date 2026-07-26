@@ -2,7 +2,7 @@
 
 A standard for **writing**, **consuming**, and **managing** skills for agents.
 
-**Version 0.5.0**, under active authorship and not yet ratified. See [CHANGELOG.md](./CHANGELOG.md).
+**Version 0.6.0**, under active authorship and not yet ratified. See [CHANGELOG.md](./CHANGELOG.md).
 
 This repository is a *specification*, not a framework. It describes how a skill
 should be authored, how an agent should read and act on it, and how skills should

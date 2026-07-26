@@ -14,6 +14,19 @@ ratified. `1.0.0` is the first complete, ratified Standard. While the version is
 the middle number and a MINOR change advances the last. On ratification the version
 becomes `1.0.0`, after which the three positions map to MAJOR, MEDIUM, and MINOR distinctly.
 
+## 0.6.0 - 2026-07-25
+
+MEDIUM DOCUMENTATION. Added worked examples throughout, threading one running example
+skill (Confirm Before Destructive Actions) through the Standard.
+
+- 0.0 Structure: a complete skill shown whole, its Definition and Requirements, Action, and Outcomes labeled.
+- 0.1 Rules: examples for modality (one rule at three strengths), scope (a god-skill split into four), and the supremacy clause (a harmful MUST shown as void).
+- 0.2 Language: weak-versus-strong contrasts for descriptive against directive, vague against precise, hedged against modal; and the three kinds of why on one rule.
+- 1.0 Gate: a lightweight skill descriptor, to show two-tier admission.
+- 1.2 Judge: a weak against strong halt message, showing faithful, balanced, non-manipulative rationale.
+- 2.0 Publishing: a skill rejected at structure and language validation.
+- 2.2 Registry: the severity ladder worked through a single skill across models and stakes.
+
 ## 0.5.0 - 2026-07-25
 
 DOCUMENTATION. Added the Introduction chapter (front matter, outside the 0/1/2 spine).

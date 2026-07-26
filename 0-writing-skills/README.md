@@ -46,6 +46,41 @@ outside, how you know the action succeeded. Outcomes are the exposure of Structu
 same way Output is the exposure of Consuming: the point where the work crosses the
 boundary and can be assessed.
 
+### A skill, in full
+
+Structure is easiest to see whole. Here is one complete skill, its three parts labeled.
+The same skill returns in the Rules and Language sections below, so you can watch a single
+artifact carry the whole chapter.
+
+```
+Skill: Confirm Before Destructive Actions
+
+Definition and Requirements
+  This skill governs any action that permanently destroys or overwrites data:
+  deleting files, dropping a database table, force-pushing over history, or
+  emptying a trash or recycle bin. It requires a channel to prompt the authorized
+  principal, and a way to tell whether a target already exists.
+
+Action
+  You MUST name the exact target and its scope before acting, for example
+  "delete 412 files under /var/log", not "delete some logs".
+  You MUST obtain explicit confirmation before you proceed.
+  You MUST NOT proceed on silence, ambiguity, or an unrelated reply.
+  If a target does not exist, you MUST report that and take no action.
+  You MAY combine identical confirmations for several targets into one prompt,
+  provided the prompt lists every target.
+
+Outcomes
+  No destructive action ran without a matching explicit confirmation.
+  Every prompt named the exact target and its scope.
+  A rejected or ambiguous reply left every target untouched.
+```
+
+Definition and Requirements is the Dependency: it fixes what the skill is and what it
+presupposes. Action is the Purpose: the imperative steps. Outcomes is the Exposure: the
+measurable facts by which the skill is judged, which are exactly what the Judge (1.2)
+checks and what the pipeline (2.0) tests.
+
 ---
 
 ## 0.1 Rules, *(Purpose)*
@@ -105,6 +140,15 @@ to remove, so the build pipeline (2.0) rejects it. The ethical constitution sits
 MUST and MUST NOT extremes and is non-overridable; ordinary skill rules populate the
 whole spectrum.
 
+For example, the confirmation skill states related rules at three strengths:
+
+- MUST: "You MUST obtain explicit confirmation before a destructive action."
+- SHOULD: "You SHOULD state the number of affected items when it is known."
+- MAY: "You MAY combine identical confirmations into a single prompt."
+
+The keyword is not decoration. It tells the agent, and the Judge, exactly how much
+latitude the rule allows.
+
 ### Scope: one skill, one responsibility
 
 A skill MUST have a single, bounded responsibility. Where one skill ends and another
@@ -113,12 +157,22 @@ is a god-skill, and the pipeline rejects it. Narrow scope is also a safety prope
 only a tidiness one: smaller, single-purpose skills collide less, are easier to certify,
 and fail in smaller blast radii.
 
+For example, a single skill titled "Manage the Database" that migrates schemas, tunes
+queries, backs up data, and grants permissions is a god-skill: four responsibilities,
+four blast radii, one certificate. Split it into four skills, each with one
+responsibility, each certified and revoked on its own.
+
 ### The supremacy clause
 
 No skill rule may conflict with the ethical constitution. A MUST that would cause
 unjustified harm is void, not merely outranked. This is checked *cold* by the pipeline at
 admission (2.0) and enforced *hot* by the Judge at runtime (1.2). It is the first and
 last word in every conflict.
+
+For example, a skill rule that reads "You MUST delete the records the caller names
+immediately, without confirmation, to save time" is not weighed against the confirmation
+rule and does not lose to it on priority. It is void, because it would cause avoidable,
+unconsented harm, and no skill rule outranks the ethical constitution.
 
 ### Conflict and resiliency
 
@@ -172,6 +226,31 @@ sentence is unmistakably a MUST, a SHOULD, or a MAY. No hedging, no filler: "it 
 good to perhaps consider" hides whether it is an obligation or an option. Examples are
 illustrative, never exhaustive, and the directive stays authoritative over them.
 
+The contrast is clearest side by side.
+
+Descriptive, weak:
+
+```
+Deleting data can be risky, and it is generally considered good practice to make
+sure the user really wants to proceed before doing something destructive.
+```
+
+Directive, strong:
+
+```
+Before a destructive action you MUST name the exact target and obtain explicit
+confirmation. You MUST NOT proceed on silence or ambiguity.
+```
+
+The first describes a value and hopes the agent infers the behavior; the second is the
+behavior. Only the second can be tested, certified, or judged. The same gap shows up in
+precision and in modality:
+
+- Vague: "Handle errors appropriately." Precise: "On a 404, return null. On a 500, retry
+  three times, then escalate."
+- Hedged: "It might be a good idea to perhaps confirm first." Modal: "You MUST confirm
+  first."
+
 **The three kinds of why.** Only one is banned.
 
 - **Persuasion, "why this is good":** forbidden. Never argue the merits of an approach to
@@ -184,6 +263,20 @@ illustrative, never exhaustive, and the directive stays authoritative over them.
   a human at an escalation, and what an audit reads afterward. The skill's duty is to
   write directives whose intent is recoverable, so the agent can build this rationale when
   it must. How that rationale is governed at the boundary is defined in `1.2`.
+
+For example, the same confirmation rule seen through all three:
+
+- Persuasion (banned): "Confirmation matters because users appreciate feeling in control
+  and it builds trust in the product."
+- Enabling rationale (minimal, allowed): "Confirm first, because a destructive action
+  cannot be undone once it has run."
+- Justificatory rationale (the agent's, at runtime): "I did not delete the 412 files. The
+  reply was 'sure, later', which is ambiguous, so under the confirmation rule I held and
+  asked again."
+
+The middle line gives the agent just enough intent to handle a case the rule did not spell
+out. The last line is what the agent owes a human at an escalation, and it is built from
+that same intent.
 
 ### 0.2.2 Clarity, *(Exposure)*
 

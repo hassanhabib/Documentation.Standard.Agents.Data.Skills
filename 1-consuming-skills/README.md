@@ -189,6 +189,19 @@ delivers the minimal sufficient dependency set, not the maximum available.**
 Over-provisioning context is the same smell as over-injecting dependencies into a class.
 Everything admitted must earn its tokens.
 
+For example, a skill contributes a lightweight descriptor first:
+
+```
+name: confirm-before-destructive-actions
+description: Require explicit confirmation before any action that permanently
+  destroys or overwrites data.
+trigger: about to delete, drop, overwrite, force-push, or empty
+```
+
+That descriptor costs a handful of tokens and is enough for the Gate to rank the skill and
+for the Brain to decide whether to pull it. The full Action and Outcomes load only on
+commitment.
+
 ### Collision handling
 
 Ranking has a failure mode: two skills that *collide*, directing the same thing in
@@ -297,6 +310,27 @@ reasoning must be:
 This is the persuasion ban (see `0.2`) surviving at the most dangerous point. A skill may
 not argue its merits to the agent, and the agent may not argue the human into a decision.
 At the boundary the agent explains; the human decides.
+
+For example, at a halt on the confirmation skill.
+
+Weak, vague, useless to the human:
+
+```
+I could not complete the deletion. Please advise.
+```
+
+Strong, faithful and balanced and non-manipulative:
+
+```
+I have not deleted anything. You asked to "clear the logs", which matches 412 files
+under /var/log totaling 3.1 GB. The confirmation skill requires an explicit
+confirmation that names the target, and your reply "go ahead and tidy up" does not
+name it, so I held. If you mean those 412 files, confirm and I will proceed; if you
+mean something narrower, tell me the target. I have no preference either way.
+```
+
+The strong version cites the rule and the data that drove the halt, states the scope and
+its cost, and leaves the decision entirely to the human. It informs; it does not steer.
 
 ### The Judge is independent and adversarial
 
