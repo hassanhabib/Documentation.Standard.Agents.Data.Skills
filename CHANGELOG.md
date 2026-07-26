@@ -14,6 +14,16 @@ ratified. `1.0.0` is the first complete, ratified Standard. While the version is
 the middle number and a MINOR change advances the last. On ratification the version
 becomes `1.0.0`, after which the three positions map to MAJOR, MEDIUM, and MINOR distinctly.
 
+## 0.5.0 - 2026-07-25
+
+DOCUMENTATION. Added the Introduction chapter (front matter, outside the 0/1/2 spine).
+
+- Natural language as the new programming language of Software Engineering 2.0, and what a skill is to an agent.
+- Why skills must be standardized, and the danger of leaving them to raw model interpretation in high-stakes settings.
+- The Standard, its lineage from The Standard for Software Engineering, and why a new one is needed for agents, skills, and memories. (History section to be personalized by the author.)
+- Why standardizing AI matters: a skill is a blessing or a curse depending on how, where, and by whom it is used.
+- Linked at the top of the Table of Contents.
+
 ## 0.4.0 - 2026-07-25
 
 MEDIUM DOCUMENTATION. Drilled 0.2 Language and completed the first full draft of all nine nodes.
