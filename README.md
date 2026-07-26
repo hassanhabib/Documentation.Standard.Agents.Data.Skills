@@ -2,7 +2,7 @@
 
 A standard for **writing**, **consuming**, and **managing** skills for agents.
 
-**Version 0.2.0**, under active authorship and not yet ratified. See [CHANGELOG.md](./CHANGELOG.md).
+**Version 0.2.1**, under active authorship and not yet ratified. See [CHANGELOG.md](./CHANGELOG.md).
 
 This repository is a *specification*, not a framework. It describes how a skill
 should be authored, how an agent should read and act on it, and how skills should
@@ -51,19 +51,25 @@ and governed among the many.
 
 ---
 
-## Status
+## Table of Contents
 
-This standard is being written. Each node below is marked with its state.
+- [0 Writing Skills](./0-writing-skills/README.md)
+  - [0.0 Structure](./0-writing-skills/README.md#00-structure-dependency)
+    - [0.0.0 Definition and Requirements](./0-writing-skills/README.md#000-definition-requirements-dependency)
+    - [0.0.1 Action](./0-writing-skills/README.md#001-action-purpose)
+    - [0.0.2 Outcomes](./0-writing-skills/README.md#002-outcomes-exposure)
+  - [0.1 Rules](./0-writing-skills/README.md#01-rules-purpose)
+  - [0.2 Language](./0-writing-skills/README.md#02-language-exposure)
+- [1 Consuming Skills](./1-consuming-skills/README.md)
+  - [Consumption is a Skill, Not an Interpretation](./1-consuming-skills/README.md#consumption-is-a-skill-not-an-interpretation)
+  - [The Decision Realm: Gate, Brain, Judge](./1-consuming-skills/README.md#the-decision-realm-gate-brain-judge)
+  - [1.0 Priority: the Gate](./1-consuming-skills/README.md#10-priority-dependency-the-gate)
+  - [1.1 Implementation: the Brain](./1-consuming-skills/README.md#11-implementation-purpose-the-brain)
+  - [1.2 Output: the Judge](./1-consuming-skills/README.md#12-output-exposure-the-judge)
+- [2 Managing Skills](./2-managing-skills/README.md)
+  - [2.0 Publishing: the Build Pipeline](./2-managing-skills/README.md#20-publishing-dependency-the-build-pipeline)
+  - [2.1 Governance: the Life of the Pool](./2-managing-skills/README.md#21-governance-purpose-the-life-of-the-pool)
+  - [2.2 Registry: the Compatibility Contract](./2-managing-skills/README.md#22-registry-exposure-the-catalog-and-the-compatibility-contract)
 
-- **0 / Writing skills**
-  - 0.0 Structure: [drilled]
-  - 0.1 Rules: [to drill]
-  - 0.2 Language: [to drill]
-- **1 / Consuming skills**
-  - 1.0 Priority: [drilled] (the Gate: relevance, trust, context economy, collision handling)
-  - 1.1 Implementation: [drilled] (the Brain: executes the consumption skill; free in domain, bound in protocol)
-  - 1.2 Output: [drilled] (the Judge: judges the whole before/during/after; permit/reiterate/halt; closed loop)
-- **2 / Managing skills**
-  - 2.0 Publishing: [drilled] (the build pipeline: validate, test, scan, review, sign)
-  - 2.1 Governance: [drilled] (versioning, breaking changes, continuous scanning, deprecation)
-  - 2.2 Registry: [drilled] (catalog, discovery, the model-compatibility contract)
+Status: Chapters 1 (Consuming) and 2 (Managing) are complete. In Chapter 0 (Writing),
+0.0 Structure is drilled; 0.1 Rules and 0.2 Language are still to be written.

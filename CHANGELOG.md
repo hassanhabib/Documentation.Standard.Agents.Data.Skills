@@ -14,6 +14,12 @@ ratified. `1.0.0` is the first complete, ratified Standard. While the version is
 the middle number and a MINOR change advances the last. On ratification the version
 becomes `1.0.0`, after which the three positions map to MAJOR, MEDIUM, and MINOR distinctly.
 
+## 0.2.1 - 2026-07-25
+
+MINOR DOCUMENTATION. Added a nested, decimal-numbered Table of Contents to the root
+README, linking every chapter and section, in the style of The Standard. Replaced the
+flat status list with the Table of Contents plus a one-line status.
+
 ## 0.2.0 - 2026-07-25
 
 MAJOR DOCUMENTATION. Completed Chapter 2 and reshaped its subsections.
