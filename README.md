@@ -58,7 +58,7 @@ This standard is being written. Each node below is marked with its state.
   - 0.1 Rules: [to drill]
   - 0.2 Language: [to drill]
 - **1 / Consuming skills**
-  - 1.0 Priority: [drilled] (collision handling)
+  - 1.0 Priority: [drilled] (the Gate: relevance, trust, context economy, collision handling)
   - 1.1 Implementation: [to drill]
   - 1.2 Output: [to drill]
 - **2 / Managing skills**
