@@ -122,6 +122,9 @@ The canonical home of the ethical constitution is `Standard.Agents`, because it 
 whole agent: every skill, tool, and memory. It is summarized here because the Skills
 standard is bound by it and references it. The Skills standard does not own it.
 
+It is authored in full as a standalone, loadable artifact in
+[The Ethical Constitution](../the-ethical-constitution/SKILL.md).
+
 ### Modality: how a rule is expressed
 
 Every rule declares its strength on a five-level scale. This is [RFC 2119](https://www.rfc-editor.org/rfc/rfc2119),

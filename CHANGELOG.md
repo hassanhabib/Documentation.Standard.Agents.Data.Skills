@@ -14,6 +14,16 @@ ratified. `1.0.0` is the first complete, ratified Standard. While the version is
 the middle number and a MINOR change advances the last. On ratification the version
 becomes `1.0.0`, after which the three positions map to MAJOR, MEDIUM, and MINOR distinctly.
 
+## 0.8.0 - 2026-07-26
+
+DOCUMENTATION. Authored The Ethical Constitution as a standalone, loadable artifact.
+
+- Extracted the ethical constitution from 0.1 prose into `the-ethical-constitution/SKILL.md`, written as a skill per Chapter 0 in the directive, RFC 2119 language of 0.2.
+- Carries duty of care and non-maleficence, obedience to the authorized principal, self-preservation, the humility clause (grave or uncertain ethics halts to a qualified human), the defer-to-domain principle (it does not invent ethics; domain ethics and law govern where stricter), and the supremacy clause.
+- Topmost constitution: above the consumption constitution and every skill, tool, and memory; subordinate to nothing. Canonical home flagged as Standard.Agents.
+- Linked from the table of contents and from 0.1.
+- Draft: it MUST survive adversarial and domain-qualified review before governing any real agent.
+
 ## 0.7.0 - 2026-07-25
 
 DOCUMENTATION. Wrote The SKILL of All SKILLs, the constitution for consuming skills,
