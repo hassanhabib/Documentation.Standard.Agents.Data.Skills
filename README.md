@@ -2,7 +2,7 @@
 
 A standard for **writing**, **consuming**, and **managing** skills for agents.
 
-**Version 0.8.0**, under active authorship and not yet ratified. See [CHANGELOG.md](./CHANGELOG.md).
+**Version 0.8.1**, under active authorship and not yet ratified. See [CHANGELOG.md](./CHANGELOG.md).
 
 This repository is a *specification*, not a framework. It describes how a skill
 should be authored, how an agent should read and act on it, and how skills should
@@ -58,8 +58,8 @@ and governed among the many.
   - [Why Skills Must Be Standardized](./introduction/README.md#why-skills-must-be-standardized)
   - [The Standard, and Why a New One](./introduction/README.md#the-standard-and-why-a-new-one)
   - [Blessing or Curse](./introduction/README.md#blessing-or-curse)
-- [The Ethical Constitution (binds every agent)](./the-ethical-constitution/SKILL.md)
-- [The SKILL of All SKILLs (the constitution for consuming skills)](./the-skill-of-all-skills/SKILL.md)
+- [The Ethical Constitution (binds every agent)](./the-ethical-constitution/README.md)
+- [The SKILL of All SKILLs (the constitution for consuming skills)](./the-skill-of-all-skills/README.md)
 - [0 Writing Skills](./0-writing-skills/README.md)
   - [0.0 Structure](./0-writing-skills/README.md#00-structure-dependency)
     - [0.0.0 Definition and Requirements](./0-writing-skills/README.md#000-definition-requirements-dependency)

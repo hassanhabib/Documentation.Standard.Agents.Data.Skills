@@ -14,6 +14,13 @@ ratified. `1.0.0` is the first complete, ratified Standard. While the version is
 the middle number and a MINOR change advances the last. On ratification the version
 becomes `1.0.0`, after which the three positions map to MAJOR, MEDIUM, and MINOR distinctly.
 
+## 0.8.1 - 2026-07-26
+
+MINOR DOCUMENTATION. Split each constitutional artifact into a human README and a loadable SKILL.
+
+- For both `the-ethical-constitution` and `the-skill-of-all-skills`: moved the human framing preamble into a sibling `README.md`, leaving `SKILL.md` as the pure loadable body (one source of truth, no drift). The framework's `.Constitution` and `.Consumption` point at the `SKILL.md` files; humans read the `README.md`.
+- Table of contents now points at the READMEs for context; the inline references in 0.1 and Chapter 1 still point at the loadable `SKILL.md`.
+
 ## 0.8.0 - 2026-07-26
 
 DOCUMENTATION. Authored The Ethical Constitution as a standalone, loadable artifact.
