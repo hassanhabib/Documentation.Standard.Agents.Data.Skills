@@ -9,7 +9,20 @@ version, and the bump follows the commit that carries it:
 - **MAJOR DOCUMENTATION**: a structural or breaking change. Bumps MAJOR, resets MEDIUM and MINOR.
 
 A version below `1.0.0` means the Standard is still under active authorship and not yet
-ratified. `1.0.0` is the first complete, ratified Standard.
+ratified. `1.0.0` is the first complete, ratified Standard. While the version is below
+`1.0.0` the leading `0` is frozen until ratification: a MAJOR or MEDIUM change advances
+the middle number and a MINOR change advances the last. On ratification the version
+becomes `1.0.0`, after which the three positions map to MAJOR, MEDIUM, and MINOR distinctly.
+
+## 0.2.0 - 2026-07-25
+
+MAJOR DOCUMENTATION. Completed Chapter 2 and reshaped its subsections.
+
+- Reshaped 2 / Managing from the Storage / Governance / Distribution sketch to
+  **Publishing / Governance / Registry** (Storage is now an implementation detail beneath the Standard).
+- **2.0 Publishing:** the build pipeline. Structure validation, language checks, dependency resolution, testing across a model matrix, semantic security scanning, collision scanning, human review, then signed and versioned publish. A green build is necessary but never sufficient.
+- **2.1 Governance:** skill versioning and breaking changes, deprecation with migration, continuous security and collision scanning, and the review lifecycle. The constitution is the extreme case.
+- **2.2 Registry:** catalog, discovery, distribution, and the model-compatibility contract. Framed the two lines of defense (cold pipeline, hot runtime) and the severity ladder the Gate applies (pass / warning / error / critical fail), keyed on certification status crossed with stakes: incompatible is a hard block at any stakes, unknown fails closed.
 
 ## 0.1.0 - 2026-07-25
 

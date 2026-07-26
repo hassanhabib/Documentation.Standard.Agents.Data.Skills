@@ -2,7 +2,7 @@
 
 A standard for **writing**, **consuming**, and **managing** skills for agents.
 
-**Version 0.1.0**, under active authorship and not yet ratified. See [CHANGELOG.md](./CHANGELOG.md).
+**Version 0.2.0**, under active authorship and not yet ratified. See [CHANGELOG.md](./CHANGELOG.md).
 
 This repository is a *specification*, not a framework. It describes how a skill
 should be authored, how an agent should read and act on it, and how skills should
@@ -47,7 +47,7 @@ and governed among the many.
 |---|---|---|
 | [0 / Writing skills](./0-writing-skills) | Dependency | Structure, Rules, Language: how a skill is authored |
 | [1 / Consuming skills](./1-consuming-skills) | Purpose | Priority, Implementation, Output: how an agent reads and acts on a skill |
-| [2 / Managing skills](./2-managing-skills) | Exposure | Storage, Governance, Distribution: how skills live among skills |
+| [2 / Managing skills](./2-managing-skills) | Exposure | Publishing, Governance, Registry: how skills live among skills |
 
 ---
 
@@ -64,6 +64,6 @@ This standard is being written. Each node below is marked with its state.
   - 1.1 Implementation: [drilled] (the Brain: executes the consumption skill; free in domain, bound in protocol)
   - 1.2 Output: [drilled] (the Judge: judges the whole before/during/after; permit/reiterate/halt; closed loop)
 - **2 / Managing skills**
-  - 2.0 Storage: [sketched]
-  - 2.1 Governance: [sketched]
-  - 2.2 Distribution: [sketched]
+  - 2.0 Publishing: [drilled] (the build pipeline: validate, test, scan, review, sign)
+  - 2.1 Governance: [drilled] (versioning, breaking changes, continuous scanning, deprecation)
+  - 2.2 Registry: [drilled] (catalog, discovery, the model-compatibility contract)
