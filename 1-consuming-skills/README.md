@@ -74,6 +74,8 @@ Outcomes, then Rules, then Language. It is the flagship skill and the test of th
 authoring standard: if Chapter 0 cannot express it, Chapter 0 is wrong. The document
 consumes its own output, which is the strongest validation a standard can have.
 
+That skill is written in full in [The SKILL of All SKILLs](../the-skill-of-all-skills/SKILL.md).
+
 ---
 
 ## The decision realm: Gate, Brain, Judge

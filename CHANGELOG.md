@@ -14,6 +14,17 @@ ratified. `1.0.0` is the first complete, ratified Standard. While the version is
 the middle number and a MINOR change advances the last. On ratification the version
 becomes `1.0.0`, after which the three positions map to MAJOR, MEDIUM, and MINOR distinctly.
 
+## 0.7.0 - 2026-07-25
+
+DOCUMENTATION. Wrote The SKILL of All SKILLs, the constitution for consuming skills,
+as an actual skill per the Standard.
+
+- Written per Chapter 0 (Definition and Requirements, Action, Outcomes) in the directive, RFC 2119 language of 0.2, with a single responsibility.
+- Action addresses the whole agent and each faculty: Gate (relevance, trust, context economy, model-compatibility severity ladder, collisions), Brain (reason over admitted skills, propose not commit, escalate on gaps), Judge (judge the whole, permit or reiterate or halt, adversarial and default-reject, before and during and after, faithful and non-manipulative rationale), and the loop (convergence budget, learn without amending the constitution).
+- Fail-closed bootstrap: if the constitution is absent, unverified, or altered, no skill is consumed and the agent halts. Subordinate only to the ethical constitution; never self-amended from inside the loop.
+- Linked from the table of contents and from Chapter 1.
+- This is a draft constitution and MUST survive adversarial review before governing any real agent.
+
 ## 0.6.0 - 2026-07-25
 
 MEDIUM DOCUMENTATION. Added worked examples throughout, threading one running example
