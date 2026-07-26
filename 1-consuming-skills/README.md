@@ -25,8 +25,8 @@ Consuming a skill is a decision, and every decision has three aspects:
   of available skills down to the relevant, trusted, and affordable few, and it guards
   the context window from being flooded.
 - **Brain** *(Purpose)*: the reasoning core. It reads the admitted skills and decides.
-- **Judge** *(Exposure)*: evaluates the decision against the skill's outcome before the
-  result is exposed.
+- **Judge** *(Exposure)*: evaluates the outcome as a whole, before, during, and after
+  the action, and permits, reiterates, or halts.
 
 These are not a second structure competing with Priority, Implementation, and Output.
 They are the same three, viewed as a decision. The lifecycle lens says what happens, in
@@ -45,6 +45,38 @@ Gate, Brain, and Judge are not specific to skills: the same engine governs how a
 admits memories and tools. It is a general agent decision primitive, and its shared
 definition belongs at the `Standard.Agents` level. This chapter describes only how
 consuming a skill uses it.
+
+### The decision realm sits inside a closed loop
+
+The decision realm is not a pipeline with an end. It is one turn of a cycle. An agent
+has three macro-realms, and they too are a Dependency, Purpose, Exposure:
+
+- **Data** *(Dependency)*: what everything is built on. Skills, prompt, memories, and
+  the results of prior actions. The Gate guards this realm.
+- **Decision** *(Purpose)*: the reasoning. Gate, Brain, and Judge live here.
+- **Direction** *(Exposure)*: contact with the world. Taking the action.
+
+Exposure feeds back into Dependency, and that feedback is what makes it a loop instead
+of a line: the action produces new data, the data re-enters the Data realm, and the
+next decision is asked for.
+
+```
+   ,--> Data (Gate, D) --> Decision (Brain, P) --> potential Direction (E)
+   |            \________________ Judge ________________/
+   |                       permit | reiterate | halt
+   |                              |
+   |                       Direction executes
+   |                              |
+   `----- new data (the result) --'   the Judge judges this too (after)
+```
+
+An agent that decides, acts, and walks away is *open-loop*, and open-loop is the
+dangerous kind: fire the instruction, never check the result. Closed-loop is cut, watch
+the bleeding, adjust. The after-judgment is the feedback that closes the loop; without
+it the agent is blind the instant it acts.
+
+Data, Decision, and Direction, and the loop that binds them, are `Standard.Agents`-level
+concepts. The Skills standard references them; it does not own them.
 
 ---
 
@@ -68,9 +100,10 @@ is recoverable: the Brain can ignore it.
 ### Trust
 
 The Gate is also a security boundary. A hostile or untrusted skill must not reach the
-Brain. Relevance and trust pull opposite ways when the Gate is unsure, so the rule is:
-pass what is relevant *and* trusted; when torn, err toward inclusion on relevance and
-toward exclusion on trust.
+Brain, and this is where policies, rules, and conditions are enforced: do no harm and so
+on. Relevance and trust pull opposite ways when the Gate is unsure, so the rule is: pass
+what is relevant *and* trusted; when torn, err toward inclusion on relevance and toward
+exclusion on trust.
 
 ### Context economy
 
@@ -100,8 +133,9 @@ Everything admitted must earn its tokens.
 ### Collision handling
 
 Ranking has a failure mode: two skills that *collide*, directing the same thing in
-opposite ways at the same standing. The Gate resolves conflict through a deterministic
-ladder, and escalation is the **last** rung, not the first move:
+opposite ways at the same standing. The Gate flags collisions between relevant skills in
+real time and resolves conflict through a deterministic ladder, where escalation is the
+**last** rung, not the first move:
 
 | Situation | Resolution |
 |---|---|
@@ -124,10 +158,10 @@ contradiction is a collision. On a genuine collision the agent must **fail close
 
 3. **Offer the tiebreak** so the human answers with a single choice.
 
-A live collision is also an **Output** (see 1.2) event: it feeds back to the Managing
-layer (Chapter 2), where the pool is checked *cold*, across all skills. The agent
-detects collisions *hot*, in a real runtime context the static check could not predict.
-The same concern refracted through two natures: Purpose teaching Exposure.
+A live collision is also fed back to the Managing layer (Chapter 2), where the pool is
+checked *cold*, across all skills. The agent detects collisions *hot*, in a real runtime
+context the static check could not predict. The same concern refracted through two
+natures: Purpose teaching Exposure.
 
 ---
 
@@ -135,18 +169,89 @@ The same concern refracted through two natures: Purpose teaching Exposure.
 
 > Status: to be drilled.
 
-The act itself: the Brain reasoning over the admitted skills and applying them, once
-the Gate has resolved intake and priority.
+The act itself: the Brain reasoning over the admitted skills and producing a decision,
+along with the *potential direction* it intends, once the Gate has resolved intake and
+priority. The Brain proposes; it does not commit. Nothing it produces becomes action
+until the Judge has judged it.
 
 ---
 
 ## 1.2 Output, *(Exposure)*: the Judge
 
-> Status: to be drilled.
+What the agent surfaces after applying the skill is not just a result; it is an outcome
+that has passed judgment. The Judge is the exposer of consumption and the commit gate
+between deciding and acting: nothing becomes an executed direction until the Judge
+permits it.
 
-What the agent surfaces after applying the skill: the response, the action taken, the
-result made visible. This is the true exposer of consumption, the thing crossing the
-boundary back out. Its guardian is the Judge, which evaluates the result against the
-skill's outcome (see `0.0.2`) before it is emitted, and which enforces the collision
-escalation at runtime. Exposure is judge-then-emit. This is also the channel through
-which runtime events, such as collisions, are reported to the Managing layer.
+### The Judge judges the whole
+
+The Judge does not check the decision in isolation. It judges the **outcome as a whole**,
+three layers at once:
+
+- **Data**: skills, prompt, memories. The grounds. What was known and what was asked.
+- **Decision**: what the Brain concluded.
+- **Potential direction**: the concrete action the decision intends, not yet executed.
+
+The reason it must judge the whole, and not each part in turn, is that every part can be
+locally valid and the whole still lethal. The data is right, the correct patient and the
+correct scan. The decision is sound given the data, that vessel must be clamped. And the
+potential direction still kills someone if *here* is two millimeters off, because the
+action did not faithfully carry the decision into the body. **Correctness of every part
+is not coherence of the whole.** Emergent failure lives in the seams between valid parts,
+and only a faculty that sees all three at once can see the seam.
+
+That is why it must be the Judge specifically: it is the only faculty with a panoramic
+view. The Gate sees inputs. The Brain sees inputs and produces a decision. The Judge sees
+inputs, decision, and intended action together.
+
+### The verdict space is three, not two
+
+- **Permit**: the whole coheres; the potential direction may execute.
+- **Reiterate**: send it back, and name where it broke. This is an attribution, not a
+  blind retry. A data failure re-gates (see 1.0). A decision failure returns to the
+  Brain. A direction failure means a sound decision was not faithfully carried into
+  action.
+- **Halt**: refuse, and surface to a human. Sometimes the correct output is no action
+  and an escalation, exactly like the collision tie. A Judge that can only permit or loop
+  will eventually loop itself into acting.
+
+### The Judge is independent and adversarial
+
+If the faculty that decided also judges, it rubber-stamps its own reasoning. The Judge
+reasons from the outcome backward and tries to *refute* the direction, not confirm it. In
+a critical system its job is to hunt for the reason *not* to act; only when it cannot
+find one does it permit. The burden of proof is on the action, and rigor scales with the
+potential direction: a low-stakes action gets a light pass; an irreversible or harmful
+one gets maximum scrutiny, and above a harm threshold the permit is not the Judge's to
+give alone, it requires a human.
+
+### The Judge judges before, during, and after
+
+Because the decision realm sits inside a closed loop, the Judge is not a checkpoint at a
+single instant. It runs across the whole action, in three modes:
+
+- **Before** (the potential direction): permit, reiterate, or halt. Should we act at all?
+- **During** (the action unfolding): continue or abort. Is it going as intended? This
+  requires the action to be abortable; for a live procedure it is a genuine kill-switch.
+- **After** (the produced data): confirmed or diverged. Did it achieve the outcome? A
+  divergence is not garbage to discard; it is the signal that drives the next cycle, or
+  trips a halt.
+
+The Judge is the only faculty that persists across the action, which is why it can hold
+the agent accountable for what the action *did*, not only what it *intended*.
+
+### Guardrails the loop cannot ship without
+
+1. **A closed loop can be unstable.** The after-judge finds divergence, re-decides, acts,
+   diverges again, without end. The loop needs convergence criteria and an iteration
+   budget, and non-convergence is itself a halt-to-human verdict. A feedback system with
+   no stability condition is an oscillator, not a safeguard.
+2. **Weight the Judge by reversibility.** The less abortable the action, the more the
+   *before* mode must carry, because *during* and *after* cannot undo it. Once you have
+   cut, after-judgment can only mitigate, never reverse. Irreversibility shifts the
+   burden forward, onto the pre-commit judgment.
+3. **The after-verdict becomes data.** Not only the raw result re-enters the Data realm,
+   but the Judge's assessment of it: "we tried X, it diverged, here is why." The next
+   Gate admits it and the next Brain does not repeat the mistake. That is how the loop
+   *learns* instead of merely spinning. The Judge is both the referee and the author of
+   the next round's evidence.

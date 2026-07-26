@@ -59,8 +59,8 @@ This standard is being written. Each node below is marked with its state.
   - 0.2 Language: [to drill]
 - **1 / Consuming skills**
   - 1.0 Priority: [drilled] (the Gate: relevance, trust, context economy, collision handling)
-  - 1.1 Implementation: [to drill]
-  - 1.2 Output: [to drill]
+  - 1.1 Implementation: [to drill] (the Brain)
+  - 1.2 Output: [drilled] (the Judge: judges the whole before/during/after; permit/reiterate/halt; closed loop)
 - **2 / Managing skills**
   - 2.0 Storage: [sketched]
   - 2.1 Governance: [sketched]
