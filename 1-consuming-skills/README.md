@@ -17,6 +17,65 @@ Purpose, Exposure.
 
 ---
 
+## Consumption is a skill, not an interpretation
+
+The discipline in this chapter is not advice handed to a raw model. It is itself a
+skill: the one skill whose subject is skills, the **SKILL for consuming skills**.
+Chapter 1, made loadable. Left to a raw brain's interpretation, "how to consume a skill"
+would have as many answers as there are models and moods, and interpretation is exactly
+what a standard exists to remove. Consumption is authored, not assumed.
+
+This draws the line the chapter needs:
+
+- The consumption skill owns the **protocol**: how the Gate admits, how priority
+  resolves, when the Judge halts, how the loop turns. Authored and fixed.
+- The raw Brain owns the **domain**: the actual task reasoning inside that protocol. Free.
+
+Rails and train. You do not leave the rails to the train's interpretation. The Brain's
+liberty is in *what* to conclude, never in *how* to consume.
+
+### It is constitutional
+
+Because consuming a skill is itself a skill, it cannot be consumed by the process it
+defines without infinite regress. So the consumption skill is not an ordinary tenant of
+the pool. It is the constitution:
+
+- **Never filtered by the Gate, and never questioned by the Judge.** A faculty cannot sit
+  in judgment of the thing that constitutes it; the Gate's admission rules and the
+  Judge's criteria both come from this skill. It is never the *object* of gating or
+  judging, and always the *lens* through which gating and judging happen: never judged,
+  always judging-through. It is the core of understanding, present in every act of
+  understanding and never an item within one.
+- **Loaded unconditionally at the agent's birth, outside the loop**, before there is a
+  loop to load it with.
+- **Above the priority ladder, not a rung on it.** Nothing outranks the constitution,
+  because the constitution is what defines rank.
+
+### The price of being unquestionable
+
+An artifact that nothing filters and nothing questions is the most powerful and the most
+dangerous thing in the system: own it and you own the agent, because you own how it
+consumes everything else. And because no runtime safeguard can catch a corrupted
+constitution, by design, all of the trust moves to the moment it is admitted. The
+exemption from runtime scrutiny does not lower the bar; it moves it earlier and raises
+it:
+
+- **Immutable, signed, and loaded from a trusted root.** Never fetched from the general
+  pool, never authored at runtime.
+- **Never self-amending.** The closed loop may learn domain lessons and write them back
+  as data, but it may never amend the constitution. An agent that could rewrite its own
+  consumption rules could learn its way out of its own safety. Constitutional change is
+  an out-of-band, human act, never a move inside the loop.
+
+### It is also the proof of Chapter 0
+
+The consumption skill is written per Chapter 0: Definition and Requirements, Action,
+Outcomes, then Rules, then Language. It is the flagship skill and the test of the
+authoring standard: if Chapter 0 cannot express it, Chapter 0 is wrong. The document
+consumes its own output, which is the strongest validation a standard can have.
+
+---
+
 ## The decision realm: Gate, Brain, Judge
 
 Consuming a skill is a decision, and every decision has three aspects:
@@ -167,12 +226,18 @@ natures: Purpose teaching Exposure.
 
 ## 1.1 Implementation, *(Purpose)*: the Brain
 
-> Status: to be drilled.
-
 The act itself: the Brain reasoning over the admitted skills and producing a decision,
 along with the *potential direction* it intends, once the Gate has resolved intake and
-priority. The Brain proposes; it does not commit. Nothing it produces becomes action
-until the Judge has judged it.
+priority.
+
+But the Brain does not improvise how it consumes. It executes the consumption skill (see
+"Consumption is a skill, not an interpretation" above): free in the domain, bound in the
+protocol. Its liberty is in what to conclude, never in how to consume. This is the whole
+reason the chapter is a skill and not a description of a model: the protocol is authored,
+so it does not drift with the mood of the reasoner underneath it.
+
+The Brain proposes; it does not commit. Nothing it produces becomes action until the
+Judge permits it.
 
 ---
 
