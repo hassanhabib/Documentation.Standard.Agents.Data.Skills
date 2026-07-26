@@ -2,7 +2,7 @@
 
 A standard for **writing**, **consuming**, and **managing** skills for agents.
 
-**Version 0.3.0**, under active authorship and not yet ratified. See [CHANGELOG.md](./CHANGELOG.md).
+**Version 0.4.0**, under active authorship and not yet ratified. See [CHANGELOG.md](./CHANGELOG.md).
 
 This repository is a *specification*, not a framework. It describes how a skill
 should be authored, how an agent should read and act on it, and how skills should
@@ -60,6 +60,9 @@ and governed among the many.
     - [0.0.2 Outcomes](./0-writing-skills/README.md#002-outcomes-exposure)
   - [0.1 Rules](./0-writing-skills/README.md#01-rules-purpose)
   - [0.2 Language](./0-writing-skills/README.md#02-language-exposure)
+    - [0.2.0 Terms](./0-writing-skills/README.md#020-terms-dependency)
+    - [0.2.1 Directive](./0-writing-skills/README.md#021-directive-purpose)
+    - [0.2.2 Clarity](./0-writing-skills/README.md#022-clarity-exposure)
 - [1 Consuming Skills](./1-consuming-skills/README.md)
   - [Consumption is a Skill, Not an Interpretation](./1-consuming-skills/README.md#consumption-is-a-skill-not-an-interpretation)
   - [The Decision Realm: Gate, Brain, Judge](./1-consuming-skills/README.md#the-decision-realm-gate-brain-judge)
@@ -71,5 +74,6 @@ and governed among the many.
   - [2.1 Governance: the Life of the Pool](./2-managing-skills/README.md#21-governance-purpose-the-life-of-the-pool)
   - [2.2 Registry: the Compatibility Contract](./2-managing-skills/README.md#22-registry-exposure-the-catalog-and-the-compatibility-contract)
 
-Status: Chapters 1 (Consuming) and 2 (Managing) are complete. In Chapter 0 (Writing),
-0.0 Structure and 0.1 Rules are drilled; 0.2 Language is still to be written.
+Status: all nine nodes now have a first full draft. Chapters 0 (Writing), 1 (Consuming),
+and 2 (Managing) are complete. The Standard remains under active authorship and is not
+yet ratified; ratification is reserved for version 1.0.0.

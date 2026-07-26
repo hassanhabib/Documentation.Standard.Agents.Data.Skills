@@ -280,6 +280,24 @@ inputs, decision, and intended action together.
   and an escalation, exactly like the collision tie. A Judge that can only permit or loop
   will eventually loop itself into acting.
 
+### The rationale a halt must carry
+
+A halt is only useful if the human can act on it, and that requires the agent to argue
+its case. Without a rationale, an agent can say it is stuck but cannot help the human
+decide. So every halt and every escalation carries the agent's reasoning, and that
+reasoning must be:
+
+- **faithful and grounded:** it traces to the actual skills, rules, and data that drove
+  the decision, citable and auditable, never a fluent post-hoc invention;
+- **balanced:** it presents the tradeoffs, the counter-case, and the agent's own
+  uncertainty, not a one-sided pitch;
+- **non-manipulative:** it informs the human's independent judgment; it does not steer it.
+  A recommendation is allowed, but it must be labeled as one and be easy to override.
+
+This is the persuasion ban (see `0.2`) surviving at the most dangerous point. A skill may
+not argue its merits to the agent, and the agent may not argue the human into a decision.
+At the boundary the agent explains; the human decides.
+
 ### The Judge is independent and adversarial
 
 If the faculty that decided also judges, it rubber-stamps its own reasoning. The Judge

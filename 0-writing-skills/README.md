@@ -143,10 +143,54 @@ permission.
 
 ## 0.2 Language, *(Exposure)*
 
-> Status: to be drilled.
+A skill is a directive to an executor, not an essay to a learner. A tutorial argues that
+dependency injection is good and builds a human's intuition; a skill instructs an agent
+to do dependency injection a specific way, and stops. The agent is not an audience to
+persuade but a worker to direct, and persuasion in a skill is not merely wasted words, it
+is a hazard, because it dilutes the directive and invites the agent to weigh whether to
+obey.
 
-The voice through which a skill exposes its intent to the agent that reads it.
-Structure is the form and Rules are the law; Language is how the instructions are
-actually written so an agent reliably understands and obeys them: imperative,
-unambiguous, addressed to the agent, worked examples over abstraction. It is the
-most consequential and most commonly mishandled part of authoring.
+Language is where the chapter closes on itself: Structure is the form, Rules are the law,
+and Language is how the law is voiced. So it decomposes the same way, Dependency, Purpose,
+Exposure.
+
+### 0.2.0 Terms, *(Dependency)*
+
+One name per concept. A skill defines its vocabulary and uses it consistently; the same
+thing must not be called three names, because every stray synonym is a crack where
+ambiguity seeps in. Terms are the words the rest of the language is built from, so they
+come first.
+
+### 0.2.1 Directive, *(Purpose)*
+
+Address the agent in the second person and the imperative: "Do X," never "the agent
+should consider X." Be precise and testable: "handle errors appropriately" is not an
+instruction, "on a 404 return null; on a 500 retry three times, then escalate" is.
+Precision is a safety property, because a vague instruction cannot be tested, certified,
+or judged. Encode modality explicitly with the RFC 2119 keywords from `0.1`, so every
+sentence is unmistakably a MUST, a SHOULD, or a MAY. No hedging, no filler: "it might be
+good to perhaps consider" hides whether it is an obligation or an option. Examples are
+illustrative, never exhaustive, and the directive stays authoritative over them.
+
+**The three kinds of why.** Only one is banned.
+
+- **Persuasion, "why this is good":** forbidden. Never argue the merits of an approach to
+  the agent. That is the essay we are refusing to write.
+- **Enabling rationale, "why this works":** permitted, minimal, and only where it lets the
+  agent apply the directive correctly to a case the skill did not enumerate. Its purpose
+  is to keep the directive's intent recoverable, not to convince.
+- **Justificatory rationale, "why I did this":** required, but it is the agent's to
+  produce at runtime, not the skill's. It is what the agent uses to argue its decision to
+  a human at an escalation, and what an audit reads afterward. The skill's duty is to
+  write directives whose intent is recoverable, so the agent can build this rationale when
+  it must. How that rationale is governed at the boundary is defined in `1.2`.
+
+### 0.2.2 Clarity, *(Exposure)*
+
+Clarity is not an aesthetic, it is measurable: **clear language produces convergent
+behavior.** If the same skill yields different behavior across models or across runs, it
+is ambiguous, and that divergence is exactly what the model-matrix testing in `2.0`
+surfaces. So "clear" has an empirical acceptance test rather than an opinion. A **skill
+debugger**, a linter that predicts likely divergence and flags it before the matrix has
+to, is the conformance tool for this: the Standard defines what clear means, the debugger
+enforces it, and it is a separate build, like the portal.

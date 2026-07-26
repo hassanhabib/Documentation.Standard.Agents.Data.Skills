@@ -14,6 +14,15 @@ ratified. `1.0.0` is the first complete, ratified Standard. While the version is
 the middle number and a MINOR change advances the last. On ratification the version
 becomes `1.0.0`, after which the three positions map to MAJOR, MEDIUM, and MINOR distinctly.
 
+## 0.4.0 - 2026-07-25
+
+MEDIUM DOCUMENTATION. Drilled 0.2 Language and completed the first full draft of all nine nodes.
+
+- **0.2 Language** as directive, not description: a skill is a directive to an executor, not an essay to a learner. Decomposed into Terms (Dependency: one name per concept), Directive (Purpose: imperative, second-person, precise, testable, RFC 2119 modality, no hedging), and Clarity (Exposure: measured by convergent behavior across models and runs, with the skill debugger as its linter).
+- **The three kinds of why:** persuasion is banned, enabling rationale is minimal and permitted, justificatory rationale is required but produced by the agent at runtime.
+- Enriched **1.2 (the Judge)** with the rationale a halt must carry: faithful and grounded, balanced, and non-manipulative. The persuasion ban survives at the human boundary: a skill may not argue the agent, and the agent may not argue the human.
+- This completes a first full draft of the Standard. It remains unratified; 1.0.0 is reserved for ratification.
+
 ## 0.3.0 - 2026-07-25
 
 MEDIUM DOCUMENTATION. Drilled 0.1 Rules.
